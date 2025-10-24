@@ -1,0 +1,37 @@
+
+{% extends 'reservations/base.html' %}
+
+{% block content %}
+
+    Your Reservations
+    + New Reservation
+
+
+{% if reservations %}
+    
+        {% for reservation in reservations %}
+            
+                
+                    
+                        {{ reservation.name }}
+                        
+                            Date: {{ reservation.date|date:"F d, Y" }}
+                            Time: {{ reservation.time|time:"g:i A" }}
+                            Guests: {{ reservation.guests }}
+                            {% if reservation.notes %}
+                                Notes: {{ reservation.notes }}
+                            {% endif %}
+                        
+                        Edit
+                        Delete
+                    
+                
+            
+        {% endfor %}
+    
+{% else %}
+    
+        No reservations yet. Create your first reservation
+    
+{% endif %}
+{% endblock %}

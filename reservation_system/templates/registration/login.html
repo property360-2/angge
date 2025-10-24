@@ -1,0 +1,29 @@
+
+{% extends 'reservations/base.html' %}
+
+{% block content %}
+
+    
+        
+            
+                Login
+                
+                    {% csrf_token %}
+                    
+                        Username
+                        {{ form.username }}
+                    
+                    
+                        Password
+                        {{ form.password }}
+                    
+                    {% if form.errors %}
+                        Invalid username or password
+                    {% endif %}
+                    Login
+                
+            
+        
+    
+
+{% endblock %}

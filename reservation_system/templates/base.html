@@ -1,0 +1,34 @@
+
+
+    
+    
+    {% block title %}Reservation System{% endblock %}
+    
+
+
+    
+        
+            🗓️ Reservations
+            
+                {% if user.is_authenticated %}
+                    Hello, {{ user.username }}
+                    Logout
+                {% else %}
+                    Login
+                {% endif %}
+            
+        
+    
+
+    
+        {% if messages %}
+            {% for message in messages %}
+                
+                    {{ message }}
+                    
+                
+            {% endfor %}
+        {% endif %}
+
+        {% block content %}{% endblock %}
+    
